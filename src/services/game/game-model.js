@@ -13,7 +13,8 @@ const gameSchema = new Schema({
   playerTwoId: { type: Schema.Types.ObjectId, ref: 'user', required: false },
   turn: { type: Schema.Types.ObjectId, ref: 'user', required: false },
   board: [ {type: String, required: true} ],
-  winner: { type: Boolean, required: true, default: false }
+  winner: { type: Boolean, required: true, default: false },
+  
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now }
 });
