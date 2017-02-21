@@ -1,0 +1,12 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://localhost:27017/cityguesserApi",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "exYez0wHes7TaMdc9stsFJ7uyxE41/duJCH0BSunR/JArYN5BNe0wa99ul0cTyfSkD+QlBjL2dN7WiHvSeNmFQ=="
+    },
+    "local": {}
+  }
+}
