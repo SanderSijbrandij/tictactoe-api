@@ -3,9 +3,9 @@
 module.exports = function(options) {
   return function(hook) {
     if (hook.data.type === 'madeMove') {
-
       return hook.app.service("games").get(hook.id)
       .then((game) => {
+
         const userId = hook.params.user._id
         const position = hook.data.position
         const symbol = hook.data.symbol
@@ -22,6 +22,6 @@ module.exports = function(options) {
         }
         hook.data = data
       })
-    }
+    } else { hook.id }
   }
 }

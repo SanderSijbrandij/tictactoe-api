@@ -11,6 +11,6 @@ module.exports = function(options) {
           winner: false,
         }
       })
-    }
+    } else { hook.id }
   }
 }
