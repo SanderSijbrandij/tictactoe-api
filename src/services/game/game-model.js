@@ -11,10 +11,11 @@ const Schema = mongoose.Schema;
 const gameSchema = new Schema({
   playerOneId: { type: Schema.Types.ObjectId, ref: 'user' },
   playerTwoId: { type: Schema.Types.ObjectId, ref: 'user', required: false },
-  turn: { type: Schema.Types.ObjectId, ref: 'user', required: false },
+  turn: { type: Number, 'default': 1, required: true },
+
   board: [ {type: String, required: true} ],
   winner: { type: Boolean, required: true, default: false },
-  
+
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now }
 });

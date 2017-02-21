@@ -17,7 +17,7 @@ module.exports = function(options) {
         else {
           let board = game.board
           board[position] = symbol
-          let turn = (game.turn === game.playerOneId) ? game.playerTwoId : game.playerOneId
+          let turn = (game.turn === 1) ? 2 : 1
           data = { board, turn }
         }
         hook.data = data

@@ -23,8 +23,8 @@ exports.before = {
   find: [],
   get: [],
   create: [setInitialGamestate],
-  update: [joinGame(), leaveGame(), makeMove(), resetGameState()],
-  patch: [joinGame(), leaveGame(), makeMove(), resetGameState()],
+  update: [joinGame(), leaveGame(), resetGameState(), makeMove()],
+  patch: [joinGame(), leaveGame(), resetGameState(), makeMove()],
   remove: []
 };
 
