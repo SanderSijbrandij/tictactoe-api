@@ -8,6 +8,9 @@ const common = require('feathers-hooks-common');
 const setInitialGamestate = require('./set-initial-gamestate')
 const joinGame = require('./join-game')
 const leaveGame = require('./leave-game')
+const makeMove = require('./make-move')
+const resetGameState = require('./reset-gamestate')
+const hasWon = require('./check-winner')
 const populatePlayerOne = common.populate('playerOne', { service: 'users', field: 'playerOneId' })
 const populatePlayerTwo = common.populate('playerTwo', { service: 'users', field: 'playerTwoId' })
 
@@ -20,8 +23,8 @@ exports.before = {
   find: [],
   get: [],
   create: [setInitialGamestate],
-  update: [joinGame(), leaveGame()],
-  patch: [joinGame(), leaveGame()],
+  update: [joinGame(), leaveGame(), makeMove(), resetGameState()],
+  patch: [joinGame(), leaveGame(), makeMove(), resetGameState()],
   remove: []
 };
 
@@ -30,7 +33,7 @@ exports.after = {
   find: [],
   get: [],
   create: [],
-  update: [],
-  patch: [],
+  update: [hasWon],
+  patch: [hasWon],
   remove: []
 };
