@@ -6,7 +6,10 @@ module.exports = function(hook) {
 
   // set the game's creator to player one
   hook.data.playerOneId = creator._id
-    
+
+  // set the current turn to player one
+  hook.data.turn = creator._id
+
   // set the board
   hook.data.board = board
 }
